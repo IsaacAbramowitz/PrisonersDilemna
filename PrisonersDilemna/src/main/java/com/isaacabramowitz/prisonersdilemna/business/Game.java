@@ -73,4 +73,18 @@ public class Game implements Playable {
             this.addScores();
         }
     }
+
+    /**
+     * Adds scores at the end of the round
+     */
+    private void addScores() {
+        if (this.player1Cooperated) {
+            this.player1Score--;
+            this.player2Score += 3;
+        }
+        if (this.player2Cooperated) {
+            this.player2Score--;
+            this.player1Score += 3;
+        }
+    }
 }
