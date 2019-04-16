@@ -17,6 +17,8 @@ public class Game implements Playable {
     private boolean hasStarted;
     private int player1Score;
     private int player2Score;
+    private boolean player1Cooperated;
+    private boolean player2Cooperated;
 
     @Override
     public void start(int turns, Player player1, Player player2) {
@@ -26,6 +28,8 @@ public class Game implements Playable {
         this.hasStarted = false;
         this.player1Score = 0;
         this.player2Score = 0;
+        this.player1Cooperated = false;
+        this.player2Cooperated = false;
 
         this.play();
     }
@@ -50,4 +54,23 @@ public class Game implements Playable {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * Starts running the games
+     */
+    private void play() {
+        for (int i = 0; i < this.turns; i++) {
+            if (this.hasStarted) {
+                boolean player1CurrentCooperation = this.player1.choose(this.player2Cooperated);
+                this.player2Cooperated = this.player2.choose(player1CurrentCooperation);
+
+                this.player1Cooperated = player1CurrentCooperation;
+            } else {
+                this.player1Cooperated = this.player1.choose();
+                this.player2Cooperated = this.player2.choose();
+                this.hasStarted = true;
+            }
+
+            this.addScores();
+        }
+    }
 }
