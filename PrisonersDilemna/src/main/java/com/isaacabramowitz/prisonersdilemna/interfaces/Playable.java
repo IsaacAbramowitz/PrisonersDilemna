@@ -6,7 +6,7 @@ package com.isaacabramowitz.prisonersdilemna.interfaces;
  * @author Isaac Abramowitz
  * @version 2019-04-15
  */
-public interface Game {
+public interface Playable {
 
     /**
      * Starts a series of games of prisoner's dilemna
