@@ -11,6 +11,10 @@ import com.isaacabramowitz.prisonersdilemna.interfaces.Player;
  */
 public class GradualPlayer implements Player {
 
+    private int opponentDefectCount;
+    private boolean currentlyDefecting;
+    private int i;
+
     @Override
     public boolean choose() {
         return true;
@@ -18,6 +22,19 @@ public class GradualPlayer implements Player {
 
     @Override
     public boolean choose(boolean opponentPreviousChoice) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (this.currentlyDefecting) {
+            this.i--;
+
+            this.currentlyDefecting = this.i >= 0;
+
+            return this.i < 1;
+        }
+        if (!opponentPreviousChoice) {
+            this.opponentDefectCount++;
+            this.currentlyDefecting = true;
+            this.i = this.opponentDefectCount;
+            return false;
+        }
+        return true;
     }
 }
