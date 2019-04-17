@@ -13,6 +13,13 @@ public class RandomPlayer implements Player {
 
     private Random random;
 
+    /**
+     * Creates a new RandomPlayer object
+     */
+    public RandomPlayer() {
+        this.random = new Random();
+    }
+
     @Override
     public boolean choose() {
         return random.nextBoolean();
