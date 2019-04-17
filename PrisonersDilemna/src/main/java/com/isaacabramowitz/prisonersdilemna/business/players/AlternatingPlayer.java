@@ -12,6 +12,13 @@ public class AlternatingPlayer implements Player {
 
     private boolean previousChoice;
 
+    /**
+     * Creates a new AlternatingPlayer object
+     */
+    public AlternatingPlayer() {
+        this.previousChoice = false;
+    }
+
     @Override
     public boolean choose() {
         this.previousChoice = !this.previousChoice;
