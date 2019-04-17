@@ -15,6 +15,15 @@ public class GradualPlayer implements Player {
     private boolean currentlyDefecting;
     private int i;
 
+    /**
+     * Creates a new GradualPlayer object
+     */
+    public GradualPlayer() {
+        this.opponentDefectCount = 0;
+        this.currentlyDefecting = false;
+        this.i = 0;
+    }
+
     @Override
     public boolean choose() {
         return true;
