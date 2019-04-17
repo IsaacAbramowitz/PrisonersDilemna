@@ -1,6 +1,7 @@
 package com.isaacabramowitz.prisonersdilemna.business.players;
 
 import com.isaacabramowitz.prisonersdilemna.interfaces.Player;
+import java.util.Random;
 
 /**
  * Player who decides randomly whether to cooperate or defect
@@ -10,9 +11,11 @@ import com.isaacabramowitz.prisonersdilemna.interfaces.Player;
  */
 public class RandomPlayer implements Player {
 
+    private Random random;
+
     @Override
     public boolean choose() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return random.nextBoolean();
     }
 
     @Override
