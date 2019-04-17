@@ -12,7 +12,7 @@ public class Defector implements Player {
 
     @Override
     public boolean choose() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
     @Override
