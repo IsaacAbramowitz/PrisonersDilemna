@@ -10,9 +10,12 @@ import com.isaacabramowitz.prisonersdilemna.interfaces.Player;
  */
 public class ReverseAlternatingPlayer implements Player {
 
+    private boolean previousChoice;
+
     @Override
     public boolean choose() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.previousChoice = !this.previousChoice;
+        return this.previousChoice;
     }
 
     @Override
