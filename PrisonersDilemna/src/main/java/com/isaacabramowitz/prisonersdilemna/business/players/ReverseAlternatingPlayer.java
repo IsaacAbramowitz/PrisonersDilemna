@@ -12,6 +12,13 @@ public class ReverseAlternatingPlayer implements Player {
 
     private boolean previousChoice;
 
+    /**
+     * Creates a new ReverseAlternatingPlayer object
+     */
+    public ReverseAlternatingPlayer() {
+        this.previousChoice = true;
+    }
+
     @Override
     public boolean choose() {
         this.previousChoice = !this.previousChoice;
