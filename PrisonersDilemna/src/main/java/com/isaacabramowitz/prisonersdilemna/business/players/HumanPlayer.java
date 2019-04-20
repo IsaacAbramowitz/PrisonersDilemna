@@ -42,6 +42,7 @@ public class HumanPlayer implements Player {
 
     @Override
     public boolean choose(boolean opponentPreviousChoice) {
+        System.out.println(opponentPreviousChoice);
         return this.choose();
     }
 
