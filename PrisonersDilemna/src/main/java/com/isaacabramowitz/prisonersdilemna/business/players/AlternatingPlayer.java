@@ -29,4 +29,9 @@ public class AlternatingPlayer implements Player {
     public boolean choose(boolean opponentPreviousChoice) {
         return this.choose();
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }

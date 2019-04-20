@@ -46,4 +46,9 @@ public class GradualPlayer implements Player {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }

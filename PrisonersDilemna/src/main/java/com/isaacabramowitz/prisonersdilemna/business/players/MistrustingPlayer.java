@@ -19,4 +19,9 @@ public class MistrustingPlayer implements Player {
     public boolean choose(boolean opponentPreviousChoice) {
         return opponentPreviousChoice;
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }
