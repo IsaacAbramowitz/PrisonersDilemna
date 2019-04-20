@@ -24,7 +24,20 @@ public class HumanPlayer implements Player {
 
     @Override
     public boolean choose() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        while (true) {
+            String choice = this.scanner.nextLine();
+
+            switch (choice.toUpperCase()) {
+                case "Y":
+                    return true;
+
+                case "N":
+                    return false;
+
+                default:
+                    break;
+            }
+        }
     }
 
     @Override
