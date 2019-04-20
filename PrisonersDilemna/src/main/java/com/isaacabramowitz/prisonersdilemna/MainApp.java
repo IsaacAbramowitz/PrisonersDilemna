@@ -49,7 +49,9 @@ public class MainApp {
     }
 
     private static void printResults(Game game) {
-        System.out.println(game.getPlayer1Results());
-        System.out.println(game.getPlayer2Results());
+        System.out.println(game.getPlayer1());
+        System.out.println("\t" + game.getPlayer1Results());
+        System.out.println(game.getPlayer2());
+        System.out.println("\t" + game.getPlayer2Results());
     }
 }
