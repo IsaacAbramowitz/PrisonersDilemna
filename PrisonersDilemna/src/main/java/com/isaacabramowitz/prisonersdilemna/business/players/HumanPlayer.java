@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class HumanPlayer implements Player {
 
-    private Scanner scanner;
+    private final Scanner scanner;
 
     /**
      * Creates a new HumanPlayer object
